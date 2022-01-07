@@ -1,0 +1,139 @@
+/* Style inputs, select elements and textareas */
+form {
+  text-align: center;
+}
+
+html {
+  height: 100%;
+}
+body {
+  min-height: 25%;
+  max-height: 30%;
+  margin: 0;
+  padding: 0;
+}
+.bottomAnim {
+  border: none;
+  position: adsolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #2851A6 url(../images/seasons_lev.gif);
+  background-size: auto;
+  background-position: bottom;
+  z-index: 1000;
+}
+
+input[type=text], text, select, textarea{
+  font-weight: bold;
+  width: 30%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  box-sizing: border-box;
+  resize: vertical;
+  text-align: left;
+}
+
+input[type=datetime-local]{
+  font-weight: bold;
+  width: 30%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  box-sizing: border-box;
+  resize: vertical;
+  text-align: left;
+}
+
+input[type=tel], tel{
+  &:valid {
+    border: 2px solid green;
+  }
+
+  &:invalid {
+    border: 5px solid red;
+  }
+  font-weight: bold;
+  width: 30%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  box-sizing: border-box;
+  resize: vertical;
+  text-align: left;
+}
+
+
+
+
+/* Style the label to display next to the inputs */
+label {
+  padding: 6px 6px 6px 0;
+  display: inline-block;
+  font-weight: bold;
+}
+
+/* Style the submit button */
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 10px 10px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: center;
+}
+
+/* Style the container */
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+/* Floating column for labels: 25% width */
+.col-25 {
+  float: left;
+  width: 35%;
+  margin-top: 6px;
+  margin-left: 25px;
+
+}
+
+/* Floating column for inputs: 75% width */
+.col-75 {
+  float: left;
+  width: 50%;
+  margin-top: 6px;
+}
+
+/* Floating column for inputs: 75% width */
+.col-74 {
+  float: left;
+  width: 30%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 80%;
+    margin-top: 0;
+  }
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}

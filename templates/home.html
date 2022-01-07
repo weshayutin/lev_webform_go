@@ -1,0 +1,73 @@
+<style type="text/css">.error {color: red;}</style>
+<link rel="stylesheet" href="css/styles.css">
+
+<div class="bottomAnim"></div>
+<img src="images/lev_work.png" class="center" type="top_pic" alt="boazpic" width="1000" height="500">
+
+<form action="/" method="POST" novalidate>
+	<div>
+		{{ with .Errors.Name }}
+		<p class="error">{{ . }}</p>
+		{{ end }}
+		<p><label class="col-25" type="label">Your Name:</label>
+		<input class="col-75" type="text" name="name" value="{{ .Name }}"></p>
+	</div>
+	<div>
+		{{ with .Errors.Phone }}
+		<p class="error">{{ . }}</p>
+		{{ end }}
+		<p><label class="col-25">Your Phone Number:</label>
+		<input class="col-75" id="phone" type="tel" name="phone" maxlength="10" pattern="\d{10}" placeholder="1234567890" value="{{ .Phone }}"></p>
+	</div>
+	<div>
+		{{ with .Errors.Address }}
+		<p class="error">{{ . }}</p>
+		{{ end }}
+		<p><label class="col-25">Your Delivery Address:</label>
+		<input class="col-75" type="text" name="address" value="{{ .Address }}"></p>
+	</div>
+    <div>
+		{{ with .Errors.BusyKidNum }}
+		<p class="error">{{ . }}</p>
+		{{ end }}
+		<p><label class="col-25">BusyKid Payment Cofirmation Number:</label>
+		<input class="col-75" type="text" placeholder="pay $1 via the QR code, enter confirmation number here" name="busykidnum" value="{{ .BusyKidNum }}"></p>
+	</div>
+	<div>
+		{{ with .Errors.Email }}
+		<p class="error">{{ . }}</p>
+		{{ end }}
+		<p><label class="col-25">Your email:</label>
+		<input class="col-75" type="text" name="email" value="{{ .Email }}"></p>
+	</div>
+	<div>
+		{{ with .Errors.Restaurant }}
+		<p class="error">{{ . }}</p>
+		{{ end }}
+		<p><label class="col-25">The Baked Good:</label>
+		<select  class="col-74" type="select" name="restaurant" value="{{ .Restaurant }}">
+			<option value="">Please choose an option</option>
+			<option value="Chocolate Chip Cookies">Chocolate Chip Cookies</option>
+			<option value="Sugar Cookies">Sugar Cookies</option>
+			<option value="Cake">Cake</option>
+   			<option value="Dog Treats">Dog Treats</option>
+		</select></p>
+	</div>
+	<div>
+		{{ with .Errors.DateTime }}
+		<p class="error">{{ . }}</p>
+		{{ end }}
+		<p><label class="col-25">Date and Time of Pickup:</label>
+		<input  class="col-74" type="datetime-local" name="datetime" value="{{ .DateTime }}"></p>
+	</div>
+	<div>
+		{{ with .Errors.Content }}
+		<p class="error" >{{ . }}</p>
+		{{ end }}
+		<p><label class="col-25">Order Details:</label>
+		<textarea class="col-74" type="textarea" placeholder="tell me about your order" name="content">{{ .Content }}</textarea></p>
+	</div>
+	<div>
+		<input  class="center" type="submit" value="Send Delivery Order">
+	</div>
+</form>
