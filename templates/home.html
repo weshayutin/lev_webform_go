@@ -44,20 +44,19 @@
 		{{ with .Errors.Restaurant }}
 		<p class="error">{{ . }}</p>
 		{{ end }}
-		<p><label class="col-25">The Baked Good:</label>
+		<p><label class="col-25">Lev's Services:</label>
 		<select  class="col-74" type="select" name="restaurant" value="{{ .Restaurant }}">
 			<option value="">Please choose an option</option>
-			<option value="Chocolate Chip Cookies">Chocolate Chip Cookies</option>
-			<option value="Sugar Cookies">Sugar Cookies</option>
-			<option value="Cake">Cake</option>
-   			<option value="Dog Treats">Dog Treats</option>
+			<option value="Raking">Raking</option>
+			<option value="Snow Shoveling">Snow Shoveling</option>
+			<option value="Lemonade Stand">Lemonade Stand</option>
 		</select></p>
 	</div>
 	<div>
 		{{ with .Errors.DateTime }}
 		<p class="error">{{ . }}</p>
 		{{ end }}
-		<p><label class="col-25">Date and Time of Pickup:</label>
+		<p><label class="col-25">Scheduled Date and Time:</label>
 		<input  class="col-74" type="datetime-local" name="datetime" value="{{ .DateTime }}"></p>
 	</div>
 	<div>
@@ -65,7 +64,7 @@
 		<p class="error" >{{ . }}</p>
 		{{ end }}
 		<p><label class="col-25">Order Details:</label>
-		<textarea class="col-74" type="textarea" placeholder="tell me about your order" name="content">{{ .Content }}</textarea></p>
+		<textarea class="col-74" type="textarea" placeholder="tell me a little bit more about what you need" name="content">{{ .Content }}</textarea></p>
 	</div>
 	<div>
 		<input  class="center" type="submit" value="Send Delivery Order">
